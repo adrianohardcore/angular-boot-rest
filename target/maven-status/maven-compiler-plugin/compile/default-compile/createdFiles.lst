@@ -1,0 +1,10 @@
+be\g00glen00b\repository\ContatoRepository.class
+be\g00glen00b\model\Contato.class
+be\g00glen00b\Application.class
+be\g00glen00b\repository\ItemRepository.class
+be\g00glen00b\model\Item.class
+be\g00glen00b\model\Operadora.class
+be\g00glen00b\repository\OperadoraRepository.class
+be\g00glen00b\controller\OperadoraController.class
+be\g00glen00b\controller\ContatoController.class
+be\g00glen00b\controller\ItemController.class
