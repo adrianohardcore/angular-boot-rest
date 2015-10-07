@@ -1,4 +1,4 @@
-package be.g00glen00b.model;
+package br.com.adrianohardcore.model;
 
 import javax.persistence.*;
 

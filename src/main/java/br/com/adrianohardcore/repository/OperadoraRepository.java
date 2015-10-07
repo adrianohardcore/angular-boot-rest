@@ -1,8 +1,8 @@
-package be.g00glen00b.repository;
+package br.com.adrianohardcore.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import be.g00glen00b.model.Operadora;
+import br.com.adrianohardcore.model.Operadora;
 
 public interface OperadoraRepository extends JpaRepository<Operadora, Integer> {
 
