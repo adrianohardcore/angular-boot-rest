@@ -10,12 +10,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.*;
+import org.hibernate.annotations.NaturalId;
 
 
 @Entity
 public class Contato {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private Integer id;
 	
 	@Column
@@ -28,7 +31,8 @@ public class Contato {
 	@Column
 	private Date data;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(optional = false)
+	@NaturalId	
     private Operadora operadora;
 
 	public Integer getId() {

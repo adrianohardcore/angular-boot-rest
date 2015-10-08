@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.adrianohardcore.model.Operadora;
 import br.com.adrianohardcore.repository.OperadoraRepository;
+import java.util.ArrayList;
+import java.lang.*;
 
 @RestController
 @RequestMapping("/operadoras")
-//Operadoras de telefonia
 public class OperadoraController {
   @Autowired
   private OperadoraRepository repo;
   
   @RequestMapping(method = RequestMethod.GET)
-  public List<Operadora> findOperadoras() {
+  public List<Operadora> findOperadoras() {      			
     return repo.findAll();
   }
   

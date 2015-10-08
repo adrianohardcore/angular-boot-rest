@@ -1,4 +1,13 @@
-C:\java\Projetos\contatos-rest\src\main\java\be\g00glen00b\model\Item.java
-C:\java\Projetos\contatos-rest\src\main\java\be\g00glen00b\controller\ItemController.java
-C:\java\Projetos\contatos-rest\src\main\java\be\g00glen00b\repository\ItemRepository.java
-C:\java\Projetos\contatos-rest\src\main\java\be\g00glen00b\Application.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\Contato.java
+C:\java\Projetos\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\model\QItem.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\controller\ContatoController.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\repository\ContatoRepository.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\Operadora.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\Item.java
+C:\java\Projetos\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\model\QContato.java
+C:\java\Projetos\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\model\QOperadora.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\repository\ItemRepository.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\controller\OperadoraController.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\Application.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\repository\OperadoraRepository.java
+C:\java\Projetos\angular-boot-rest\src\main\java\br\com\adrianohardcore\controller\ItemController.java

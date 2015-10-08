@@ -11,10 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.adrianohardcore.model.Contato;
 import br.com.adrianohardcore.repository.ContatoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/contatos")
 public class ContatoController {
+	
+	private final Logger log = LoggerFactory.getLogger(this.getClass());	
+	
   @Autowired
   private ContatoRepository repo;
   
@@ -25,7 +30,8 @@ public class ContatoController {
   
   @RequestMapping(method = RequestMethod.POST)
   public Contato addContato(@RequestBody Contato contato) {
-    contato.setSerial(null);
+    //contato.setSerial(null);
+	  log.info("Contato: " + contato);
     return repo.saveAndFlush(contato);
   }
   

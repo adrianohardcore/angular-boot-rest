@@ -9,8 +9,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Operadora {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id  
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	@Column
