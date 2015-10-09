@@ -1,16 +1,14 @@
 package br.com.adrianohardcore.model;
 
-import java.util.Date;
+import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
+import javax.persistence.GeneratedValue;  
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.*;
+import javax.persistence.ManyToOne;
+
 import org.hibernate.annotations.NaturalId;
 
 
@@ -65,26 +63,25 @@ public class Contato {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}  
-  
-    public Date getData() {
+	}
+
+	public Date getData() {
 		return data;
 	}
 
 	public void setData(Date data) {
 		this.data = data;
-	}  
-	
-    public Operadora getOperadora() {
+	}
+
+	public Operadora getOperadora() {
 		return operadora;
 	}
 
 	public void setOperadora(Operadora operadora) {
 		this.operadora = operadora;
-	} 	
-	
-	
-  
+	}
+
+ 
 
 
 }

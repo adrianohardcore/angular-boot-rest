@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.adrianohardcore.model.Operadora;
 import br.com.adrianohardcore.repository.OperadoraRepository;
-import java.util.ArrayList;
-import java.lang.*;
 
 @RestController
 @RequestMapping("/operadoras")

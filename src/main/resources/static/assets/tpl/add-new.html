@@ -1,0 +1,26 @@
+<meta charset='utf-8'>
+<h2>Add new user</h2>
+<div class="row">
+  <div class="col-md-6">
+  <form novalidate name="AddNewForm" id="add-new-form" method="post" action="">
+  
+  
+    <div class="form-group">
+      <label for="nomeusuario">Usuário:</label>
+      <input class="form-control" type="text" ng-model="usuario.nomeusuario" required />
+    </div>
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input class="form-control" type="text" ng-model="usuario.nome" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input class="form-control" type="text" ng-model="usuario.email" required />
+    </div>
+    
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(user)" id="add-new-btn" ng-click="add_new(user)">Salvar</button>
+    <a href="#/" class="btn">Cancelar</a>
+    {{usuario}}
+  </form>
+</div>
+</div>
