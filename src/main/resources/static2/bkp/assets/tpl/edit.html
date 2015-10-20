@@ -1,0 +1,28 @@
+<meta charset='utf-8'>
+<h2>Edit usuario</h2>
+<div class="row">
+  <div class="col-md-6">  
+  <form novalidate  name="AddNewForm" id="add-new-form" method="post" action="">
+    <input type="hidden" ng-model="usuario.id" value="{{usuario.id}}" />
+	
+	
+    <div class="form-group">
+      <label for="nomeusuario">Usuário:</label>
+      <input class="form-control" type="text" ng-model="usuarios.nomeusuario" required />
+    </div>
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input class="form-control" type="text" ng-model="usuarios.nome" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input class="form-control" type="text" ng-model="usuarios.email" required />
+    </div>
+	
+	
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(usuario)" id="add-new-btn" ng-click="update(usuario)">Update <span class="glyphicon glyphicon-floppy-disk"></span></button>
+    <button class="btn btn-danger" ng-click="delete(usuario)">Delete <span class="glyphicon glyphicon-trash"></span></button>
+    <a href="#/" class="btn">Cancel</a>
+  </form>
+</div>
+</div>

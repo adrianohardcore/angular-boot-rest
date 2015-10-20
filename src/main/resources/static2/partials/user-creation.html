@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<div class="container">
+    <h1>Novo Usuário</h1>
+    <h2>{{user}}</h2>
+    <form novalidate="novalidate" name="AddNewForm" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputNome">Nome:</label>
+            <div class="controls">
+                <input type="text" id="inputNome" ng-model="user.nome" placeholder="Nome" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputNomeUsuario">Usuário:</label>
+
+            <div class="controls">
+                <input type="text" id="inputNomeUsuario" ng-model="user.nomeusuario" placeholder="Usuário" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputSenha">Senha:</label>
+
+            <div class="controls">
+                <input type="text" id="inputSenha" ng-model="user.senha" placeholder="Senha" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <!--<a      ng-click="createNewUser()" class="btn btn-small btn-primary"  ng-disabled="AddNewForm.$invalid || isUnchanged(user)" >Novo usuário</a>-->
+                <button ng-click="createNewUser()" class="btn btn-primary"            ng-disabled="AddNewForm.$invalid || isUnchanged(user)" id="add-new-btn" >Salvar</button>
+                <a href="#/" class="btn">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</div>
