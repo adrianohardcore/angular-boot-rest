@@ -2,27 +2,5 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/ApiErrors.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/Application.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/Constants.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/DTOUtils.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/model/Comment.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/model/Post.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/br/com/adrianohardcore/model/User.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/css" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/i18n" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/ico" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/img" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/index.html" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/js" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/main.html" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static/partials" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/css" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/img" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/index-async.html" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/index.html" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/js" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/lib" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/static2/partials" charset="windows-1252" />
   </component>
 </project>

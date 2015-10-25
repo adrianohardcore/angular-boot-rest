@@ -1,1 +1,4 @@
-Projeto de teste Angular Route+ Spring Boot RestController
+Baseado no repositório
+https://github.com/hantsy/angularjs-springmvc-sample-boot
+
+Simplificação do projeto

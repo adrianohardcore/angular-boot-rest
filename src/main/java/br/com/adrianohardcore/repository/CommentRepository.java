@@ -1,14 +1,18 @@
 package br.com.adrianohardcore.repository;
 
-import br.com.adrianohardcore.model.Comment;
-import br.com.adrianohardcore.model.Usuario;
+import br.com.adrianohardcore.domain.Comment;
+import br.com.adrianohardcore.domain.Post;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 
-import java.util.Optional;
+import java.util.List;
 
-public interface CommentRepository extends JpaRepository<Comment, Long>, QueryDslPredicateExecutor<Usuario> {
 
+public interface CommentRepository extends JpaRepository<Comment, Long> {
+	
+	public List<Comment> findByPost(Post post);
+
+    public Page<Comment> findByPostId(Long id, Pageable page);
+	
 }

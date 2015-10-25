@@ -44,6 +44,30 @@
         };
     });
 
+    as.controller('SignupController', function ($scope, $rootScope, $http, base64, $location) {
+        var actionUrl = 'api/signup';
+        $scope.data = {};
+
+        $scope.signup = function () {
+            console.log('sginup @' +  $scope.newUser);
+            $http.post(actionUrl, $scope.newUser)
+                    .success(function (data) {
+                        console.log(data);
+                        $http.defaults.headers.common['Authorization'] = 'Basic ' + base64.encode($scope.newUser.username + ':' + $scope.newUser.password);
+                        $location.url('/user/home');
+                    })
+                    .error(function (data) {
+                        console.log(data);
+                    });
+
+        };
+
+        $scope.cancel = function () {
+            $location.url('/login');
+        };
+
+    });
+
     as.controller('PasswordController', function ($scope, $rootScope, $http, base64, $location) {
         var actionUrl = 'api/me/password';
         $scope.data = {};
@@ -109,16 +133,21 @@
                 load = function () {
                     $http.get(actionUrl + '?page=' + ($scope.p - 1)).success(function (data) {
                         $scope.users = data.content;
-                        $scope.totalItems=data.totalElements;
+                        $scope.totalItems = data.totalElements;
                     });
                 };
 
         load();
 
         $scope.roleOpts = ['USER', 'ADMIN'];
-        $scope.user = {};
-        
-        $scope.search=function(){
+
+        var initUser = function () {
+            $scope.newUser = {};
+            $scope.newUser.role = 'USER';
+            $scope.userCopy = angular.copy($scope.newUser);
+        };
+
+        $scope.search = function () {
             load();
         };
 
@@ -133,15 +162,21 @@
         };
 
         $scope.initAdd = function () {
-            $scope.user = {};
+            initUser();
             $('#userDialog').modal('show');
         };
 
         $scope.save = function () {
-            $http.post(actionUrl, $scope.user).success(function () {
+            $http.post(actionUrl, $scope.newUser).success(function () {
                 $('#userDialog').modal('hide');
                 load();
             });
+        };
+
+        $scope.cancel = function () {
+            $scope.newUser = angular.copy($scope.userCopy);
+            $scope.form.$setPristine();
+            $('#userDialog').modal('hide');
         };
 
         $scope.order = '+username';
@@ -252,9 +287,9 @@
             $scope.statusOpt = r;
             load();
         };
-        
+
         $scope.add = function () {
-             $location.path('/posts/new');
+            $location.path('/posts/new');
         };
 
         $scope.delPost = function (idx) {

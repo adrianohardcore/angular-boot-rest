@@ -1,22 +1,31 @@
 package br.com.adrianohardcore;
 
-import br.com.adrianohardcore.model.User;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.common.base.Predicate;
-import org.apache.catalina.security.SecurityUtil;
-import org.springframework.boot.SpringApplication;
+import static com.google.common.base.Predicates.or;
+import static com.google.common.collect.Lists.newArrayList;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.AdviceMode;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import br.com.adrianohardcore.domain.User;
+import br.com.adrianohardcore.repository.UserRepository;
+import br.com.adrianohardcore.security.SecurityUtil;
+import br.com.adrianohardcore.security.SimpleUserDetailsServiceImpl;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import javax.inject.Inject;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,9 +36,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.AuthorizationScopeBuilder;
+import static springfox.documentation.builders.PathSelectors.regex;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.AuthorizationScope;
 import springfox.documentation.service.BasicAuth;
@@ -38,12 +47,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import javax.inject.Inject;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-
-import static springfox.documentation.builders.PathSelectors.regex;
 
 @SpringBootApplication
 @EnableTransactionManagement(mode = AdviceMode.ASPECTJ)

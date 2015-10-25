@@ -6,7 +6,7 @@
         this.setLanguage = function (language) {
             $.i18n.properties({
                 name: 'messages',
-                path: '/i18n/',
+                path: 'i18n/',
                 mode: 'map',
                 language: language,
                 callback: function () {
@@ -14,8 +14,7 @@
                 }
             });
         };
-        this.setLanguage('en');
-        //this.setLanguage('zh_CN');
+        this.setLanguage('zh_CN');
     });
 
     as.directive('msg', function () {
