@@ -1,3 +1,8 @@
+/**
+ * Controller
+ * Unício controller para todo o aplicativo
+ */
+
 (function () {
     var as = angular.module('exampleApp.controllers', []);
 
@@ -26,6 +31,8 @@
 // $scope.$emit('event:loginRequest', $scope.username, $scope.password);
 // //$('#login').modal('hide');
 // };
+
+
         $scope.logout = function () {
             $rootScope.user = null;
             $scope.username = $scope.password = null;

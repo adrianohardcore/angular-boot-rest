@@ -1,3 +1,9 @@
+/**
+ * Seleção de linguagem
+ * Selecionado padrão pt_BR
+ * Arquivos de mensagem apartir da pasta /static/js/i18n.js
+ */
+
 (function () {
     var as = angular.module('exampleApp.i18n',[]);
 
@@ -14,7 +20,8 @@
                 }
             });
         };
-        this.setLanguage('zh_CN');
+        this.setLanguage('pt_BR');
+        //this.setLanguage('zh_CN');
     });
 
     as.directive('msg', function () {

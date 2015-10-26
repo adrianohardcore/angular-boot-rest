@@ -11,6 +11,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+/**
+ * Classe responsável por fazer uma importação inicial dos dados para o bnco
+ */
+
 @Named
 public class DataImporter implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -37,15 +41,15 @@ public class DataImporter implements ApplicationListener<ContextRefreshedEvent> 
             userRepository.save(
                 new User().builder()
                 .username("admin")
-                .password(passwordEncoder.encode("test123"))
+                .password(passwordEncoder.encode("admin"))
                 .name("Administrator")
                 .role("ADMIN")
                 .build()
             );
             userRepository.save(
                  new User().builder()
-                .username("testuser")
-                .password(passwordEncoder.encode("test123"))
+                .username("user")
+                .password(passwordEncoder.encode("user"))
                 .name("Test User")
                 .role("USER")
                 .build()
