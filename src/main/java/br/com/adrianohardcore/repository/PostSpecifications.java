@@ -1,7 +1,7 @@
 package br.com.adrianohardcore.repository;
 
 import br.com.adrianohardcore.domain.Post;
-import br.com.adrianohardcore.domain.Post_;
+import br.com.adrianohardcore.domain.QPost;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 
@@ -26,13 +26,13 @@ public class PostSpecifications {
             List<Predicate> predicates = new ArrayList<>();
             if (StringUtils.hasText(keyword)) {
                 predicates.add(
-                        cb.or(cb.like(root.get(Post_.title), "%" + keyword + "%"),
-                                cb.like(root.get(Post_.content), "%" + keyword + "%"))
+                        cb.or(cb.like(root.get(QPost.post.title.toString()), "%" + keyword + "%"),
+                                cb.like(root.get(QPost.post.content.toString()), "%" + keyword + "%"))
                 );
             }
 
             if (status != null) {
-                predicates.add(cb.equal(root.get(Post_.status), status));
+                predicates.add(cb.equal(root.get(QPost.post.status.toString()), status));
             }
 
             return cb.and(predicates.toArray(new Predicate[predicates.size()]));

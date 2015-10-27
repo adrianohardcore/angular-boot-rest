@@ -17,7 +17,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.AuditorAware;
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.http.HttpMethod;
@@ -31,28 +30,16 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.AuthorizationScopeBuilder;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.AuthorizationScope;
-import springfox.documentation.service.BasicAuth;
-import springfox.documentation.service.SecurityReference;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spi.service.contexts.SecurityContext;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
 import static com.google.common.base.Predicates.or;
 import static com.google.common.collect.Lists.newArrayList;
-import static springfox.documentation.builders.PathSelectors.regex;
+
 
 @SpringBootApplication
 @EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
-@EntityScan(basePackageClasses = {User.class, Jsr310JpaConverters.class})
+@EntityScan(basePackageClasses = {User.class})
 @EnableSpringDataWebSupport()
 @EnableJpaAuditing(auditorAwareRef = "auditor")
 public class Application {
@@ -80,62 +67,7 @@ public class Application {
         return builder;
     }
 
-    @Configuration
-    @EnableSwagger2
-    @Profile(value = {"dev", "test", "staging"})// Loads the spring beans required by the framework
-    public static class SwaggerConfig {
 
-        @Bean
-        public Docket userApi() {
-            AuthorizationScope[] authScopes = new AuthorizationScope[1];
-            authScopes[0] = new AuthorizationScopeBuilder()
-                    .scope("read")
-                    .description("read access")
-                    .build();
-            SecurityReference securityReference = SecurityReference.builder()
-                    .reference("test")
-                    .scopes(authScopes)
-                    .build();
-
-            ArrayList<SecurityContext> securityContexts = newArrayList(
-                    SecurityContext
-                    .builder()
-                    .securityReferences(newArrayList(securityReference))
-                    .build()
-            );
-            return new Docket(DocumentationType.SWAGGER_2)
-                    .directModelSubstitute(LocalDateTime.class, String.class)
-                    .ignoredParameterTypes(User.class)
-                    .securitySchemes(newArrayList(new BasicAuth("test")))
-                    .securityContexts(securityContexts)
-                    .apiInfo(apiInfo())
-                    .select()
-                    .paths(apiPaths())
-                    .build();
-        }
-
-        private Predicate<String> apiPaths() {
-            return or(
-                    regex("/api/.*")
-            );
-        }
-
-//        private Predicate<String> userOnlyEndpoints() {
-//            return (String input) -> input.contains("user");
-//        }
-        private ApiInfo apiInfo() {
-            return new ApiInfoBuilder()
-                    .title("AngularJS Spring MVC Example API")
-                    .description("The online reference documentation for developers")
-                    .termsOfServiceUrl("http://hantsy.blogspot.com")
-                    .contact("Hantsy Bai")
-                    .license("Apache License Version 2.0")
-                    .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
-                    .version("2.0")
-                    .build();
-        }
-
-    }
 
     @Configuration
     @Order(-10)

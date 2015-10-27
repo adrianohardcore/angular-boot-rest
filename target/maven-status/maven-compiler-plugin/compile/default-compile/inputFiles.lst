@@ -6,14 +6,14 @@ C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardco
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\api\user\CurrentUserController.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\UserDetails.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\repository\PostRepository.java
-C:\Users\adria\IdeaProjects\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\domain\Comment_.java
+C:\Users\adria\IdeaProjects\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\domain\QPost.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\domain\User.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\repository\UserRepository.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\security\SimpleUserDetailsServiceImpl.java
+C:\Users\adria\IdeaProjects\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\domain\QComment.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\exception\UsernameAlreadyUsedException.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\repository\PostSpecifications.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\PostDetails.java
-C:\Users\adria\IdeaProjects\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\domain\Post_.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\Constants.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\exception\ResourceNotFoundException.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\service\BlogService.java
@@ -27,9 +27,9 @@ C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardco
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\ProfileForm.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\ApiErrors.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\Application.java
+C:\Users\adria\IdeaProjects\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\domain\QUser.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\DTOUtils.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\SignupForm.java
-C:\Users\adria\IdeaProjects\angular-boot-rest\target\generated-sources\java\br\com\adrianohardcore\domain\User_.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\model\PostForm.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\security\CurrentUser.java
 C:\Users\adria\IdeaProjects\angular-boot-rest\src\main\java\br\com\adrianohardcore\service\UserService.java

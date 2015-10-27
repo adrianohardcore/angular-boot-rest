@@ -1,7 +1,7 @@
 package br.com.adrianohardcore.repository;
 
 import br.com.adrianohardcore.domain.User;
-import br.com.adrianohardcore.domain.User_;
+import br.com.adrianohardcore.domain.QUser;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 
@@ -31,13 +31,13 @@ public class UserSpecifications {
             if (StringUtils.hasText(keyword)) {
                 predicates.add(
                         cb.or(
-                                cb.like(root.get(User_.name), "%" + keyword + "%"),
-                                cb.like(root.get(User_.username), "%" + keyword + "%")
+                                cb.like(root.get(QUser.user.name.toString()), "%" + keyword + "%"),
+                                cb.like(root.get(QUser.user.username.toString()), "%" + keyword + "%")
                         ));
             }
 
             if (StringUtils.hasText(role) && !"ALL".equals(role)) {
-                predicates.add(cb.equal(root.get(User_.role), role));
+                predicates.add(cb.equal(root.get(QUser.user.role.toString()), role));
 //                ListJoin<User_, String> roleJoin = root.join(User_.roles);
 //                predicates.add(cb.equal(roleJoin, role));
             }

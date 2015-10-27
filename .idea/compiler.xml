@@ -30,8 +30,16 @@
         <processorPath useClasspath="true" />
         <module name="ng-spring-boot" />
       </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="angular-boot-rest" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="angular-boot-rest" target="1.8" />
       <module name="ng-spring-boot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
